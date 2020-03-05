@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegate{
     
     var myfriendsarray=["Marcus","Davion","Ocean"]
+     var myfriendsarraycity=["Honolulu","Atlanta","Austin"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         myfriendsarray.count
     }
@@ -19,20 +20,15 @@ class ViewController: UIViewController,UITableViewDataSource, UITableViewDelegat
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
         let text = myfriendsarray[indexPath.row]
         cell.textLabel?.text = text
+        cell.detailTextLabel?.text=myfriendsarraycity[indexPath.row]
         return cell
     }
     
-    var myfriendsarraycity=["Honolulu","Atlanta","Austin"]
+   
     func tableView2(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         myfriendsarraycity.count
     }
-    private func tableView2(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "cellReuseIdentifier")!
-    let text = myfriendsarraycity[indexPath.row]
-    cell.textLabel?.text = text
-    return cell
-        // Do any additional setup after loading the view.
-    }
+    
 
 
 }
